@@ -6,12 +6,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemText from "@mui/material/ListItemText";
 import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
 import { Link } from "react-router-dom";
 
 const drawerWidth = 240;
@@ -52,7 +47,7 @@ function ResponsiveDrawer(props) {
           },
         ].map((text) => (
           <li
-            key={text}
+            key={text.route}
             className="p-2 m-2 rounded hover:bg-gray-200 text-black cursor-pointer"
           >
             <Link to={text.route} className="flex items-center gap-3">
@@ -147,7 +142,7 @@ function ResponsiveDrawer(props) {
           },
         ].map((text) => (
           <li
-            key={text}
+            key={text.route}
             className="p-2 m-2 rounded hover:bg-gray-200 text-black cursor-pointer"
           >
             <Link to={text.route} className="flex items-center gap-3">
@@ -229,7 +224,7 @@ function ResponsiveDrawer(props) {
           },
         ].map((text) => (
           <li
-            key={text}
+            key={text.route}
             className="p-2 m-2 rounded hover:bg-gray-200 text-black cursor-pointer"
           >
             <Link to={text.route} className="flex items-center gap-3">
@@ -253,17 +248,17 @@ function ResponsiveDrawer(props) {
         sx={{
           width: { sm: `calc(100% - ${drawerWidth}px)` },
           ml: { sm: `${drawerWidth}px` },
-          padding: '10px',
-          bgcolor: 'whitesmoke'
+          padding: "5px",
+          bgcolor: "whitesmoke",
         }}
       >
         <Toolbar
           sx={{
             bgcolor: "whitesmoke",
             color: "black",
-            display: 'flex',
-            alignItems: 'center',
-            gap: '10px'
+            display: "flex",
+            alignItems: "center",
+            gap: "10px",
           }}
         >
           <IconButton
@@ -305,7 +300,7 @@ function ResponsiveDrawer(props) {
             display: { xs: "block", sm: "none" },
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
-              width: '80vw',
+              width: "80vw",
             },
           }}
         >
