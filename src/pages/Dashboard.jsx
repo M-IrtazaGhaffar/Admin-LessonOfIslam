@@ -25,9 +25,9 @@ function ResponsiveDrawer(props) {
   };
 
   const drawer = (
-    <div>
+    <div className="font-Poppins">
       <Toolbar>
-        <h1 className="font-semibold text-2xl text-[#FF385C] my-12">
+        <h1 className="font-semibold text-2xl text-[#FF385C] w-full text-center my-12">
           LessonOfIslam
         </h1>
       </Toolbar>
@@ -334,7 +334,7 @@ function ResponsiveDrawer(props) {
         }}
       >
         <Toolbar />
-        <div className="">
+        <div className="min-h-screen">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
           temporibus ut doloremque nisi quibusdam hic perferendis tenetur soluta
           nostrum id architecto iste alias at deleniti nam repellat quaerat
