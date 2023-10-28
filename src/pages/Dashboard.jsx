@@ -1,52 +1,3 @@
-// import * as React from "react";
-// import Box from "@mui/joy/Box";
-// import Drawer from "@mui/joy/Drawer";
-// import Button from "@mui/joy/Button";
-// import Divider from "@mui/joy/Divider";
-
-// function Dashboard() {
-//   const [open, setOpen] = React.useState(false);
-
-//   const toggleDrawer = (inOpen) => (event) => {
-//     if (
-//       event.type === "keydown" &&
-//       (event.key === "Tab" || event.key === "Shift")
-//     ) {
-//       return;
-//     }
-
-//     setOpen(inOpen);
-//   };
-
-//   return (
-//     <Box sx={{ display: "flex" }}>
-//       <Button variant="outlined" color="neutral" onClick={toggleDrawer(true)}>
-//         Open drawer
-//       </Button>
-//       <Drawer open={open} onClose={toggleDrawer(false)}>
-// <h1 className="font-semibold text-2xl p-4">
-//   Dashboard
-// </h1>
-//         <Box
-//           role="presentation"
-//           onClick={toggleDrawer(false)}
-//           onKeyDown={toggleDrawer(false)}
-//         >
-// <ul className="">
-//   {["Inbox", "Starred", "Send email", "Drafts"].map((text) => (
-//     <li key={text} className="p-2 m-2 rounded hover:bg-gray-200 text-black cursor-pointer">
-//       <button>{text}</button>
-//     </li>
-//   ))}
-// </ul>
-//         </Box>
-//       </Drawer>
-//     </Box>
-//   );
-// }
-
-// export default Dashboard;
-
 import * as React from "react";
 import PropTypes from "prop-types";
 import AppBar from "@mui/material/AppBar";
@@ -302,12 +253,17 @@ function ResponsiveDrawer(props) {
         sx={{
           width: { sm: `calc(100% - ${drawerWidth}px)` },
           ml: { sm: `${drawerWidth}px` },
+          padding: '10px',
+          bgcolor: 'whitesmoke'
         }}
       >
         <Toolbar
           sx={{
             bgcolor: "whitesmoke",
             color: "black",
+            display: 'flex',
+            alignItems: 'center',
+            gap: '10px'
           }}
         >
           <IconButton
@@ -315,25 +271,20 @@ function ResponsiveDrawer(props) {
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: "none" } }}
+            sx={{ display: { sm: "none" } }}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="25"
               height="25"
               fill="currentColor"
-              class="bi bi-distribute-vertical"
+              class="bi bi-view-list"
               viewBox="0 0 16 16"
-              onClick={() => setMobileOpen(!mobileOpen)}
             >
-              <path
-                fill-rule="evenodd"
-                d="M1 1.5a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 0-1h-13a.5.5 0 0 0-.5.5zm0 13a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 0-1h-13a.5.5 0 0 0-.5.5z"
-              />
-              <path d="M2 7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V7z" />
+              <path d="M3 4.5h10a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2zm0 1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1H3zM1 2a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13A.5.5 0 0 1 1 2zm0 12a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13A.5.5 0 0 1 1 14z" />
             </svg>
           </IconButton>
-          <h1 className="text-xl p-4">Dashboard</h1>
+          <h1 className="text-xl">Dashboard</h1>
         </Toolbar>
       </AppBar>
       <Box
@@ -354,7 +305,7 @@ function ResponsiveDrawer(props) {
             display: { xs: "block", sm: "none" },
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
-              width: drawerWidth,
+              width: '80vw',
             },
           }}
         >
@@ -383,7 +334,7 @@ function ResponsiveDrawer(props) {
         }}
       >
         <Toolbar />
-        <div>
+        <div className="">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
           temporibus ut doloremque nisi quibusdam hic perferendis tenetur soluta
           nostrum id architecto iste alias at deleniti nam repellat quaerat
